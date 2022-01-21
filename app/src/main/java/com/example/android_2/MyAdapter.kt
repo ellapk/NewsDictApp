@@ -37,7 +37,7 @@ class MyAdapter(
             rootView = v
             v.isClickable = true
             v.isEnabled = true
-            //v.setOnClickListener(onClickListener)
+            //v.setOnClickListener(onClickListener) 오류나는 부분
         }
     }
 
