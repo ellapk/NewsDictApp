@@ -39,7 +39,6 @@ class NewsActivity : AppCompatActivity() {
         queue = Volley.newRequestQueue(this) // 네트워크 통신을 위해서 큐에 담는다
         getNews()
 
-
         //1. 화면이 로딩 -> 뉴스 정보를 받아온다 ------
         //2. 정보 -> 어댑터 넘겨준다
         //3. 어댑터 -> 셋팅
