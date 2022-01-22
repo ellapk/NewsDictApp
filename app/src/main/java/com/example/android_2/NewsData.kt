@@ -2,7 +2,7 @@ package com.example.android_2
 
 import java.io.Serializable
 
-class NewsData : Serializable {
+class NewsData : Serializable { // 어댑터에  JSONObject타입의 데이터에서 필요한 값만 뽑아서 전달하기 위해 클래스 생성
 
     private var title: String? = null
     private var urlToImage: String? = null

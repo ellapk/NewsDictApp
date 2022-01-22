@@ -33,7 +33,9 @@ class MyAdapter(
         init {
             TextView_title = v.findViewById(R.id.TextView_title)
             TextView_content = v.findViewById(R.id.TextView_content)
-            ImageView_title = v.findViewById(R.id.ImageView_title)
+            ImageView_title = v.findViewById<SimpleDraweeView>(R.id.ImageView_title)
+
+            //하나의 뉴스 항목에서 아무곳이나 눌러도 기사로 넘어갈 수 있도록 한다.
             rootView = v
             v.isClickable = true
             v.isEnabled = true
@@ -61,7 +63,7 @@ class MyAdapter(
     ) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        val news = mDataset!![position]
+        val news = mDataset!![position] //뉴스 기사 하나를 news에 저장한다
         holder.TextView_title.text = news.getTitle()
         val description = news.getDescription()
         if (description !== "null" && description!!.length > 0) {
@@ -70,9 +72,8 @@ class MyAdapter(
             holder.TextView_content.text = "-"
         }
         val uri = Uri.parse(news.getUrlToImage())
-        holder.ImageView_title.setImageURI(uri)
-
-        //tag - label
+        holder.ImageView_title.setImageURI(uri) //이미지 셋팅팅
+        //postion tag를 붙여준다
         holder.rootView.tag = position
     }
 
@@ -83,7 +84,7 @@ class MyAdapter(
         return mDataset?.size ?: 0
     }
 
-    fun getNews(position: Int): NewsData? {
+    fun getNews(position: Int): NewsData? { //position에 맞는 뉴스 기사 하나를 반환한다
         return mDataset?.get(position)
     }
 
