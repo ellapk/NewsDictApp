@@ -1,40 +1,34 @@
 package com.example.android_2
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.Button
 import android.widget.EditText
-import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity2 : AppCompatActivity() {
+class Dictionary : AppCompatActivity() {
 
-    lateinit var search: EditText
-    lateinit var searchButton: Button
+    lateinit var news: RecyclerView
     lateinit var dictionary: WebView
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_dictionary)
+
+        val news = findViewById<RecyclerView>(R.id.news)
+        val dictionary = findViewById<WebView>(R.id.dictionary)
 
         dictionary.apply {
             settings.javaScriptEnabled = true
             webViewClient = WebViewClient()
         }
 
-        dictionary.loadUrl("https://www.doopedia.co.kr/index.do")
+        dictionary.loadUrl("https://terms.naver.com/list.naver?cid=41699&categoryId=41699")
 
-        search.setOnEditorActionListener {_, actionId , _ ->
-            if(actionId == EditorInfo.IME_ACTION_SEARCH) {
-                dictionary.loadUrl(search.text.toString())
-                true
-            } else {
-                false
-            }
-        }
 
     }
 
