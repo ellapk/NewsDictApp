@@ -38,6 +38,7 @@ class NewsData : Serializable { // 어댑터에  JSONObject타입의 데이터�
     }
     fun setUrl(url : String?){
         this.url = url
+
     }
 
 }
