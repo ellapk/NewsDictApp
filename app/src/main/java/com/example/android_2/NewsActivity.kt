@@ -46,6 +46,7 @@ class NewsActivity : AppCompatActivity() {
 
 
     private fun getNews(){
+
         val url = "https://newsapi.org/v2/top-headlines?country=kr&category=technology&apiKey=0e0dba402ba343a7af20d980750ca707" // 이 주소로 접속할 것이라고 volley한테 알린다
 
         // url 주소에 대한 응답으로 string형태가 전달된다.
@@ -70,6 +71,7 @@ class NewsActivity : AppCompatActivity() {
                                 newsData.setTitle(obj.getString("title"))
                                 newsData.setUrlToImage(obj.getString("urlToImage"))
                                 newsData.setDescription(obj.getString("description"))
+                                newsData.setUrl(obj.getString("url"))
                                 news.add(newsData)
                                 i++
                             }

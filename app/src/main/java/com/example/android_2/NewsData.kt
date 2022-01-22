@@ -7,6 +7,7 @@ class NewsData : Serializable { // 어댑터에  JSONObject타입의 데이터�
     private var title: String? = null
     private var urlToImage: String? = null
     private var description: String? = null
+    private var url : String? = null
 
     fun getTitle(): String? {
         return title
@@ -20,6 +21,10 @@ class NewsData : Serializable { // 어댑터에  JSONObject타입의 데이터�
         return urlToImage
     }
 
+    fun getUrl(): String?{
+        return url
+    }
+
     fun setUrlToImage(urlToImage: String?) {
         this.urlToImage = urlToImage
     }
@@ -30,6 +35,9 @@ class NewsData : Serializable { // 어댑터에  JSONObject타입의 데이터�
 
     fun setDescription(description: String?) {
         this.description = description
+    }
+    fun setUrl(url : String?){
+        this.url = url
     }
 
 }
