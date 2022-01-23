@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class Dictionary : AppCompatActivity() {
 
-    lateinit var news: RecyclerView
+    lateinit var news: WebView
     lateinit var dictionary: WebView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,7 @@ class Dictionary : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dictionary)
 
-        val news = findViewById<RecyclerView>(R.id.news)
+        val news = findViewById<WebView>(R.id.news)
         val dictionary = findViewById<WebView>(R.id.dictionary)
 
         dictionary.apply {

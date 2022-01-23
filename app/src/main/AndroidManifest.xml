@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_new_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_2">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".MainActivity2" android:parentActivityName=".NewsActivity"></activity>
-        <activity android:name=".NewsActivity">
+        <activity android:name=".NewsActivity"></activity>
+        <activity android:name=".Dictionary" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".MainActivity">
 
         </activity>
 

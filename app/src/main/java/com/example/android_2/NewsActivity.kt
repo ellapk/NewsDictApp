@@ -89,7 +89,7 @@ class NewsActivity : AppCompatActivity() {
                                             //그냥 심플하게 빈 화면에 description 정보만 출력하는 방법
                                             val intent = Intent(
                                                     this@NewsActivity,
-                                                    MainActivity::class.java
+                                                    Dictionary::class.java
                                             )
                                             intent.putExtra(
                                                     "news",
