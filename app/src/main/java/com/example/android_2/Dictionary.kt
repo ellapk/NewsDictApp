@@ -24,7 +24,7 @@ class Dictionary : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dictionary)
-        findViewById<MaterialToolbar>(R.id.toolbar).setNavigationOnClickListener {  }
+        findViewById<MaterialToolbar>(R.id.toolbar).setNavigationOnClickListener { onBackPressed() }
         val news = findViewById<WebView>(R.id.news)
         dictionary = findViewById<WebView>(R.id.dictionary)
         healines = intent.getSerializableExtra("data") as NewsHealines

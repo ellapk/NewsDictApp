@@ -52,6 +52,7 @@
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 <!--주석
     <LinearLayout
         android:id="@+id/linearLayout"
