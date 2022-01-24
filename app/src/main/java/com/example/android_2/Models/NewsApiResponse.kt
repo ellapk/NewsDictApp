@@ -1,6 +1,8 @@
 package com.example.android_2.Models
 
-class NewsApiResponse {
+import java.io.Serializable
+
+class NewsApiResponse : Serializable {
 
     private var status: String? = null
     private var totalResults = 0

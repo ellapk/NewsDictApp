@@ -1,6 +1,8 @@
 package com.example.android_2.Models
 
-class NewsHealines {
+import java.io.Serializable
+
+class NewsHealines : Serializable {
 
     private var source: Source? = null
     private var author = ""
