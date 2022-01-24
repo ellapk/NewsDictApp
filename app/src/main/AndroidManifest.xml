@@ -14,7 +14,8 @@
 
         <activity
             android:name=".Dictionary"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.Android_2.NoActionBar"/>
 
         <activity
             android:name=".MainActivity"
