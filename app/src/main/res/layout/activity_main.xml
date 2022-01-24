@@ -30,6 +30,36 @@
 
         </com.google.android.material.appbar.MaterialToolbar>
 
+        <LinearLayout
+            android:layout_margin="6dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_technology"
+                android:text="@string/TECHNOLOGY"
+                android:textSize="18sp"
+                android:layout_margin="6dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+            </Button>
+
+            <Button
+                android:id="@+id/btn_science"
+                android:text="@string/SCIENCE"
+                android:textSize="18sp"
+                android:layout_margin="6dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+            </Button>
+
+        </LinearLayout>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
