@@ -93,5 +93,6 @@ class MainActivity : AppCompatActivity(), SelectListener, View.OnClickListener {
     fun dialogSettings(){
         dialog!!.setTitle(R.string.loading)
         dialog!!.setIcon(R.drawable.icon_dialog)
+        dialog!!.setCancelable(false)
     }
 }
