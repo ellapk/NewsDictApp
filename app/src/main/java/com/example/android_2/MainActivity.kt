@@ -3,6 +3,7 @@ package com.example.android_2
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,7 +26,6 @@ class MainActivity : AppCompatActivity(), SelectListener {
         dialog!!.show()
         val manager = RequestManager(this)
         manager.getNewsHeadlines(listener, "technology", null) //여기서 뉴스 기사에 대한 응답을 얻는다
-
     }
 
     private val listener: OnFetchDataListener<NewsApiResponse?> = object : OnFetchDataListener<NewsApiResponse?> {
@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity(), SelectListener {
         mAdapter = CustomAdapter(this, list as List<NewsHealines>,this)
         mRecyclerView!!.adapter=mAdapter
         mRecyclerView!!.setHasFixedSize(true)
+
 
     }
 
