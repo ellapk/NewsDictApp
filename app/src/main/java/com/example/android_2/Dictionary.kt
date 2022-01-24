@@ -9,6 +9,7 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_2.Models.NewsHealines
+import com.google.android.material.appbar.MaterialToolbar
 
 class Dictionary : AppCompatActivity() {
 
@@ -20,9 +21,9 @@ class Dictionary : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dictionary)
-
+        findViewById<MaterialToolbar>(R.id.toolbar).setNavigationOnClickListener {  }
         val news = findViewById<WebView>(R.id.news)
-        val dictionary = findViewById<WebView>(R.id.dictionary)
+        dictionary = findViewById<WebView>(R.id.dictionary)
         healines = intent.getSerializableExtra("data") as NewsHealines
 
         dictionary.apply {
