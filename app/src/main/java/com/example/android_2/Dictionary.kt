@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -11,7 +12,12 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_2.Models.NewsHealines
+import com.example.android_2.databinding.ActivityDictionaryBinding
+import com.example.android_2.databinding.ActivityMainBinding
 import com.google.android.material.appbar.MaterialToolbar
+import com.sothree.slidinguppanel.SlidingUpPanelLayout
+import com.sothree.slidinguppanel.SlidingUpPanelLayout.*
+
 
 class Dictionary : AppCompatActivity() {
 
@@ -19,12 +25,23 @@ class Dictionary : AppCompatActivity() {
     lateinit var dictionary: WebView
     var healines: NewsHealines? = null
     var dialog: ProgressDialog? = null
+    private lateinit var binding : ActivityDictionaryBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dictionary)
-        findViewById<MaterialToolbar>(R.id.toolbar).setNavigationOnClickListener { onBackPressed() }
+        //setContentView(R.layout.activity_dictionary)
+
+        binding = ActivityDictionaryBinding.inflate(layoutInflater)
+        val view  = binding.root
+        setContentView(view)
+
+        val slidePanel = binding.mainFrame
+        slidePanel.addPanelSlideListener(PanelEventListener())  // 이벤트 리스너 추가
+
+
+        //findViewById<MaterialToolbar>(R.id.toolbar).setNavigationOnClickListener { onBackPressed() }
+
         val news = findViewById<WebView>(R.id.news)
         dictionary = findViewById<WebView>(R.id.dictionary)
         healines = intent.getSerializableExtra("data") as NewsHealines
@@ -64,6 +81,20 @@ class Dictionary : AppCompatActivity() {
         }
         news?.loadUrl(healines?.getUrl())
 
+        binding.btnToggle.setOnClickListener {
+            val state = slidePanel.panelState
+            // 닫힌 상태일 경우 열기
+            if (state == SlidingUpPanelLayout.PanelState.COLLAPSED) {
+                slidePanel.panelState = SlidingUpPanelLayout.PanelState.ANCHORED
+                slidePanel.isTouchEnabled = false
+            }
+            // 열린 상태일 경우 닫기
+            else if (state == SlidingUpPanelLayout.PanelState.EXPANDED) {
+                slidePanel.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
+                slidePanel.isTouchEnabled = true
+            }
+        }
+
 
     }
 
@@ -79,6 +110,21 @@ class Dictionary : AppCompatActivity() {
         dialog!!.setTitle(R.string.loading)
         dialog!!.setIcon(R.drawable.icon_dialog)
         dialog!!.setCancelable(false)
+    }
+
+    inner class PanelEventListener : PanelSlideListener {
+        // 패널이 슬라이드 중일 때
+        override fun onPanelSlide(panel: View?, slideOffset: Float) {
+        }
+
+        // 패널의 상태가 변했을 때
+        override fun onPanelStateChanged(panel: View?, previousState: PanelState?, newState: PanelState?) {
+            if (newState == PanelState.COLLAPSED) {
+                binding.btnToggle.text = "IT 공학 사전 열기"
+            } else if (newState == PanelState.EXPANDED) {
+                binding.btnToggle.text = "IT 공학 사전 닫기"
+            }
+        }
     }
 
 }
