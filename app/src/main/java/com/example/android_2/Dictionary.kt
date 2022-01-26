@@ -98,13 +98,13 @@ class Dictionary : AppCompatActivity() {
 
     }
 
-    override fun onBackPressed() {
+    /*override fun onBackPressed() {
         if(dictionary.canGoBack()) {
             dictionary.goBack()
         }else {
             super.onBackPressed()
         }
-    }
+    }*/
 
     fun dialogSettings(){
         dialog!!.setTitle(R.string.loading)
