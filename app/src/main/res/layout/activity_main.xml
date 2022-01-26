@@ -43,6 +43,7 @@
                 android:textSize="18sp"
                 android:fontFamily="@font/roboto_slab"
                 android:background="@drawable/button_round"
+                android:foreground="?attr/selectableItemBackground"
                 android:layout_margin="6dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -57,6 +58,7 @@
                 android:textSize="18sp"
                 android:fontFamily="@font/roboto_slab"
                 android:background="@drawable/button_round"
+                android:foreground="?attr/selectableItemBackground"
                 android:layout_margin="6dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -73,6 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
+        android:background="?attr/selectableItemBackground"
         android:padding="8dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
