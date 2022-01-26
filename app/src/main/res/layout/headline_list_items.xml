@@ -54,8 +54,8 @@
                 android:layout_height="wrap_content"
                 android:maxLines="3"
                 android:textColor="@color/black"
-                android:fontFamily="@font/nanum_square_round_eb"
-                android:textSize="22sp"
+                android:fontFamily="@font/nanum_square_round_l"
+                android:textSize="17sp"
                 android:textStyle="bold">
 
             </TextView>
