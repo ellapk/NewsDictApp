@@ -51,6 +51,9 @@ dependencies {
     //CardView 구현을 위한 code
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
+    //버튼 클릭시 물결효과를 위한 code
+    implementation 'com.balysv:material-ripple:1.0.2'
+
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     // For control over item selection of both touch and mouse driven selection
     implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
