@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,74 +8,77 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <androidx.appcompat.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        app:elevation="0dp"
-        app:liftOnScroll="false">
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/cocoblue"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
-            app:layout_scrollFlags="enterAlwaysCollapsed|scroll">
+            android:text="DicSwuNary"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title"
+            android:textSize="30sp"
+            />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:adjustViewBounds="true"
-                android:src="@drawable/dicswunary" />
+    </androidx.appcompat.widget.Toolbar>
 
-        </com.google.android.material.appbar.MaterialToolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="117dp"
+        android:layout_margin="6dp"
+        android:orientation="horizontal"
+        android:paddingTop="50dp">
 
-        <LinearLayout
-            android:layout_margin="6dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_technology"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_round"
+            android:fontFamily="@font/roboto_slab"
+            android:foreground="?attr/selectableItemBackground"
+            android:paddingTop="0dp"
+            android:text="@string/TECHNOLOGY"
+            android:textColor="@color/white"
+            android:textSize="18sp">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_technology"
-                android:text="@string/TECHNOLOGY"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:fontFamily="@font/roboto_slab"
-                android:background="@drawable/button_round"
-                android:foreground="?attr/selectableItemBackground"
-                android:layout_margin="6dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
+        </androidx.appcompat.widget.AppCompatButton>
 
-            </androidx.appcompat.widget.AppCompatButton>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_science"
+            android:layout_width="178dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_round"
+            android:fontFamily="@font/roboto_slab"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="@string/SCIENCE"
+            android:textColor="@color/white"
+            android:textSize="18sp">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_science"
-                android:text="@string/SCIENCE"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:fontFamily="@font/roboto_slab"
-                android:background="@drawable/button_round"
-                android:foreground="?attr/selectableItemBackground"
-                android:layout_margin="6dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
-
-            </androidx.appcompat.widget.AppCompatButton>
-
-        </LinearLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
+        </androidx.appcompat.widget.AppCompatButton>
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
+        android:layout_height="530dp"
+        android:layout_marginTop="130dp"
         android:background="?attr/selectableItemBackground"
+        android:clipToPadding="false"
         android:padding="8dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
