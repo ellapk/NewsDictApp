@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity(), SelectListener, View.OnClickListener {
         btn_science?.setOnClickListener(this)
 
         val manager = RequestManager(this)
-        manager.getNewsHeadlines(listener, "technology", null) //여기서 뉴스 기사에 대한 응답을 얻는다
+        manager.getNewsHeadlines(listener, "technology", null) //여기서 매개값으로 전달하는 내용에 대한 API 호출을 진행하여 응답을 얻는다
     }
 
     private val listener: OnFetchDataListener<NewsApiResponse?> = object : OnFetchDataListener<NewsApiResponse?> {
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity(), SelectListener, View.OnClickListener {
 
         }
 
-        override fun onError(message: String?) {
+        override fun onError(message: String?) { // 에러를 다루는 메소드
             Toast.makeText(this@MainActivity, "에러 발생", Toast.LENGTH_LONG).show()}
     }
 
@@ -73,13 +73,13 @@ class MainActivity : AppCompatActivity(), SelectListener, View.OnClickListener {
     }
 
 
-    override fun OnNewsClicked(healines: NewsHealines?) {
+    override fun OnNewsClicked(healines: NewsHealines?) { //특정 뉴스 항목에 대한 카드뷰를 눌렀을 때 동작하는 메소드이다. 해당 뉴스에 대한 헤드라인 객체를 DetailsActivity에 전달한다.
         val intent = Intent(this@MainActivity, Dictionary::class.java)
-        intent.putExtra("data", healines) //헤드라인 객체를 DetailsActivity에 전달한다.
+        intent.putExtra("data", healines)
         startActivity(intent)
     }
 
-    override fun onClick(view: View) {
+    override fun onClick(view: View) { // 버튼을 눌렀을 때 각 카테고리에 대한 뉴스 API를 호출할 수 있도록 하는 메소드
         val button = view as Button
         val category = button.text.toString()
 
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity(), SelectListener, View.OnClickListener {
         manager.getNewsHeadlines(listener, category, null) //여기서 뉴스 기사에 대한 응답을 얻는다
     }
 
-    fun dialogSettings(){
+    fun dialogSettings(){ //progressDialog를 띄우기위한 기본설정을 정한 메소드
         dialog!!.setTitle(R.string.loading)
         dialog!!.setIcon(R.drawable.icon_dialog)
         dialog!!.setCancelable(false)

@@ -12,7 +12,9 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 class RequestManager(var context: Context) { //API 호출을 관리하는 클래스
-    var retrofit = Retrofit.Builder()
+
+    //API 호출을 위한 라이브러리를 사용하기 위해 객체를 만든다다
+   var retrofit = Retrofit.Builder()
             .baseUrl("https://newsapi.org/v2/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -22,14 +24,14 @@ class RequestManager(var context: Context) { //API 호출을 관리하는 클래
         val call = callsNewsApi.callHeadlines("kr", category, query, context.getString(R.string.api_key))
         try {
             call.enqueue(object : Callback<NewsApiResponse> {
-                override fun onResponse(call: Call<NewsApiResponse>, response: Response<NewsApiResponse>) { //응답 성공
+                override fun onResponse(call: Call<NewsApiResponse>, response: Response<NewsApiResponse>) { //해당 요청에 대한 응답 성공
                     if (!response.isSuccessful) {
                         Toast.makeText(context, "Error!!!", Toast.LENGTH_SHORT).show()
                     }
                     listener.onFetchData(response.body()!!.getArticles(), response.message())
                 }
 
-                override fun onFailure(call: Call<NewsApiResponse>, t: Throwable) { //응답 실패 -> 메세지만 전달
+                override fun onFailure(call: Call<NewsApiResponse>, t: Throwable) { //해당 요청에 대한 응답 실패 -> 메세지만 전달
                     listener.onError("Request Failed!!!")
                 }
             })
@@ -38,7 +40,7 @@ class RequestManager(var context: Context) { //API 호출을 관리하는 클래
         }
     }
 
-    interface CallsNewsApi {
+    interface CallsNewsApi { //API 호출할 때 request parameter로 전달할 수 있는 부분을 작성한다.
         @GET("top-headlines")
         fun callHeadlines(
                 @Query("country") country: String?,
