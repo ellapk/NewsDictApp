@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) { //리사이클러뷰에 대한 뷰홀더 클래스이다. 목록에 보여줄 아이템 레이아웃에 값을 입력한다
     var text_title: TextView
     var text_source: TextView
     var img_headline: ImageView

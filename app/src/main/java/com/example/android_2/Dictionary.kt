@@ -83,13 +83,11 @@ class Dictionary : AppCompatActivity() {
 
         binding.btnToggle.setOnClickListener {
             val state = slidePanel.panelState
-            // 닫힌 상태일 경우 열기
-            if (state == SlidingUpPanelLayout.PanelState.COLLAPSED) {
+            if (state == SlidingUpPanelLayout.PanelState.COLLAPSED) { // 닫힌 상태일 경우 열기
                 slidePanel.panelState = SlidingUpPanelLayout.PanelState.ANCHORED
                 slidePanel.isTouchEnabled = false
             }
-            // 열린 상태일 경우 닫기
-            else if (state == SlidingUpPanelLayout.PanelState.EXPANDED) {
+            else if (state == SlidingUpPanelLayout.PanelState.EXPANDED) { // 열린 상태일 경우 닫기
                 slidePanel.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
                 slidePanel.isTouchEnabled = true
             }
@@ -121,8 +119,10 @@ class Dictionary : AppCompatActivity() {
         override fun onPanelStateChanged(panel: View?, previousState: PanelState?, newState: PanelState?) {
             if (newState == PanelState.COLLAPSED) {
                 binding.btnToggle.text = "IT 공학 사전 열기"
+
             } else if (newState == PanelState.EXPANDED) {
                 binding.btnToggle.text = "IT 공학 사전 닫기"
+
             }
         }
     }

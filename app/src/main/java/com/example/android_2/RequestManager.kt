@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-class RequestManager(var context: Context) {
+class RequestManager(var context: Context) { //API 호출을 관리하는 클래스
     var retrofit = Retrofit.Builder()
             .baseUrl("https://newsapi.org/v2/")
             .addConverterFactory(GsonConverterFactory.create())

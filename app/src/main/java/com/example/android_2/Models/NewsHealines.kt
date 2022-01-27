@@ -2,7 +2,7 @@ package com.example.android_2.Models
 
 import java.io.Serializable
 
-class NewsHealines : Serializable {
+class NewsHealines : Serializable { // 요청에 대한 응답으로 오는 json객체가 가지고 있는 기사에 대한 정보들을 사용하기 위한 클래스
 
     private var source: Source? = null
     private var author = ""

@@ -47,8 +47,8 @@ class MainActivity : AppCompatActivity(), SelectListener, View.OnClickListener {
     private val listener: OnFetchDataListener<NewsApiResponse?> = object : OnFetchDataListener<NewsApiResponse?> {
         override fun onFetchData(list: List<NewsHealines?>?, message: String?) {
 
-            if(list?.isEmpty()!!){
-                Toast.makeText(this@MainActivity, "에러 발생", Toast.LENGTH_LONG).show()
+            if(list?.isEmpty()!!){ // 응답으로 전달되는 기사가 없을 때
+                Toast.makeText(this@MainActivity, "제공되는 news가 없습니다.", Toast.LENGTH_LONG).show()
             }
             else{
                 showNews(list as List<NewsHealines>) //리사이클러뷰에 뉴스를 표시한 후에 dialog 종료
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity(), SelectListener, View.OnClickListener {
             Toast.makeText(this@MainActivity, "에러 발생", Toast.LENGTH_LONG).show()}
     }
 
-    private fun showNews(list: List<NewsHealines>) { // 본문을 초기화하는 역할
+    private fun showNews(list: List<NewsHealines>) { // 리사이클러뷰를 초기화하는 역할
         mRecyclerView = findViewById(R.id.recycler_main)
 
         mLayoutManager = GridLayoutManager(this,1)
