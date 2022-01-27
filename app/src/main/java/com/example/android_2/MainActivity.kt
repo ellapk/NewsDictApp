@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity(), SelectListener, View.OnClickListener {
     }
 
     private val listener: OnFetchDataListener<NewsApiResponse?> = object : OnFetchDataListener<NewsApiResponse?> {
-        override fun onFetchData(list: List<NewsHealines?>?, message: String?) {
+        override fun onFetchData(list: List<NewsHealines?>?, message: String?) { // 리사이클러뷰에 뉴스 항목을 보여주기 위한 메소드이다.
 
             if(list?.isEmpty()!!){ // 응답으로 전달되는 기사가 없을 때
                 Toast.makeText(this@MainActivity, "제공되는 news가 없습니다.", Toast.LENGTH_LONG).show()
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity(), SelectListener, View.OnClickListener {
 
         }
 
-        override fun onError(message: String?) { // 에러를 다루는 메소드
+        override fun onError(message: String?) { // 에러를 다루는 메소드 --> 에러가 발생했다는 것을 토스트메세지로 알려준다
             Toast.makeText(this@MainActivity, "에러 발생", Toast.LENGTH_LONG).show()}
     }
 

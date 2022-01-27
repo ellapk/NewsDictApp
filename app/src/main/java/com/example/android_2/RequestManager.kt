@@ -24,14 +24,14 @@ class RequestManager(var context: Context) { //API 호출을 관리하는 클래
         val call = callsNewsApi.callHeadlines("kr", category, query, context.getString(R.string.api_key))
         try {
             call.enqueue(object : Callback<NewsApiResponse> {
-                override fun onResponse(call: Call<NewsApiResponse>, response: Response<NewsApiResponse>) { //해당 요청에 대한 응답 성공
-                    if (!response.isSuccessful) {
+                override fun onResponse(call: Call<NewsApiResponse>, response: Response<NewsApiResponse>) { //해당 요청에 대한 응답 있을 때
+                    if (!response.isSuccessful) { //응답이 성공적이지 않을 때
                         Toast.makeText(context, "Error!!!", Toast.LENGTH_SHORT).show()
                     }
                     listener.onFetchData(response.body()!!.getArticles(), response.message())
                 }
 
-                override fun onFailure(call: Call<NewsApiResponse>, t: Throwable) { //해당 요청에 대한 응답 실패 -> 메세지만 전달
+                override fun onFailure(call: Call<NewsApiResponse>, t: Throwable) { //해당 요청에 대한 응답 없을 때 -> 에러메세지만 전달
                     listener.onError("Request Failed!!!")
                 }
             })
