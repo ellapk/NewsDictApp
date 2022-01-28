@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/voca_read"
+        android:title="단어장 보기" />
+    <item
+        android:id="@+id/voca_write"
+        android:title="단어 쓰기" />
+</menu>

@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-
+        <activity android:name=".VocaWriteActivity"></activity>
+        <activity android:name=".VocaReadActivity" />
+        <activity android:name=".ChooseActivity" />
         <activity
             android:name=".Dictionary"
             android:parentActivityName=".MainActivity"
