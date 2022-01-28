@@ -4,18 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/article_button"
     tools:context=".ChooseActivity">
 
     <Button
         android:id="@+id/goNews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:text="뉴스"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:layout_marginTop="336dp"
+        android:background="@drawable/select_article"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,12 +22,36 @@
         android:id="@+id/goMyVoca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="나만의 단어장 "
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/select_mydict"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goNews" />
+        app:layout_constraintTop_toBottomOf="@+id/goNews"
+        app:layout_constraintVertical_bias="0.102" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="169dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="356dp"
+        android:text="DicSwuNary만의 차별화된\nIT/공학 뉴스를 만나볼 수 있습니다."
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.987"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="171dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="488dp"
+        android:layout_marginEnd="4dp"
+        android:text="DicSwuNary에서 기사를 보며 몰랐던 단어들을\n한눈에 볼 수 있는\n나만의 단어장입니다."
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
