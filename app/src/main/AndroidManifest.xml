@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light"
         android:usesCleartextTraffic="true">
-        <activity android:name=".VocaWriteActivity"></activity>
+        <activity android:name=".VocaAddActivity"></activity>
+        <activity android:name=".VocaWriteActivity" />
         <activity android:name=".VocaReadActivity" />
         <activity android:name=".ChooseActivity" />
         <activity

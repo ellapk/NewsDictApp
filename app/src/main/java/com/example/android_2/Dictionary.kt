@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -105,8 +106,9 @@ class Dictionary : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId) {
             R.id.action_mydic -> {
-                val intent = Intent(this,VocaWriteActivity::class.java)
+                val intent = Intent(this,VocaAddActivity::class.java)
                 startActivity(intent)
+                Log.d("here","메뉴")
                 return true
             }
         }
