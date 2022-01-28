@@ -99,18 +99,24 @@ class Dictionary : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.top_menu, menu)
+        menuInflater.inflate(R.menu.vocabulary, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId) {
-            R.id.action_mydic -> {
-                val intent = Intent(this,VocaAddActivity::class.java)
+
+            R.id.voca_read -> { // 나만의 단어장을 볼 수 있도록 액티비티 이동
+                val intent = Intent(this,VocaReadActivity::class.java)
                 startActivity(intent)
-                Log.d("here","메뉴")
                 return true
             }
+            R.id.voca_add -> { // 단어장에 단어를 추가할 수 있도록 액티비티 이동
+                val intent = Intent(this,VocaAddActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+
         }
         return super.onOptionsItemSelected(item)
     }

@@ -4,8 +4,8 @@
 
     <item
         android:id="@+id/voca_read"
-        android:title="단어장 보기" />
+        android:title="나만의 사전 보기" />
     <item
-        android:id="@+id/voca_write"
-        android:title="단어 쓰기" />
+        android:id="@+id/voca_add"
+        android:title="단어 추가하기" />
 </menu>
