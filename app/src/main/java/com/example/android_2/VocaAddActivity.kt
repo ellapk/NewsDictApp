@@ -31,8 +31,7 @@ class VocaAddActivity : AppCompatActivity() {
 
             if((str_voca.length != 0) && (str_mean.length != 0)){
                 sqlitedb = dbManager.writableDatabase
-                sqlitedb.execSQL("INSERT INTO vocaTBL VALUES ('"+str_voca+"', "
-                        +str_mean+");")
+                sqlitedb.execSQL("INSERT INTO voca VALUES ('"+str_voca+"', '"+str_mean+"');")
                 sqlitedb.close()
                 Toast.makeText(this, str_voca + " 입력됨", Toast.LENGTH_SHORT).show()
             }
