@@ -35,7 +35,7 @@
             android:id="@+id/btn_toggle"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="13dp"
             android:gravity="center"
             android:text="IT 공학 사전 열기"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -48,7 +48,10 @@
             android:id="@+id/dictionary"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout_editor_absoluteY="732dp" />
+            android:layout_marginTop="69dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android_2</string>
+    <string name="app_name">DicSwuNary</string>
     <string name="api_key">d19f92a330064cffbbd79560eeb660ad</string>
     <string name="hint">Search for words</string>
     <string name="TECHNOLOGY">TECHNOLOGY</string>

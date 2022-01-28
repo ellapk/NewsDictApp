@@ -95,7 +95,22 @@ class Dictionary : AppCompatActivity() {
             }
         }
 
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.top_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId) {
+            R.id.action_mydic -> {
+                val intent = Intent(this,VocaWriteActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     /*override fun onBackPressed() {
@@ -108,7 +123,6 @@ class Dictionary : AppCompatActivity() {
 
     fun dialogSettings(){
         dialog!!.setTitle(R.string.loading)
-        dialog!!.setIcon(R.drawable.icon_dialog)
         dialog!!.setCancelable(false)
     }
 
