@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -92,7 +91,6 @@ class MainActivity : AppCompatActivity(), SelectListener, View.OnClickListener {
 
     fun dialogSettings(){ //progressDialog를 띄우기위한 기본설정을 정한 메소드
         dialog!!.setTitle(R.string.loading)
-        dialog!!.setIcon(R.drawable.icon_dialog)
         dialog!!.setCancelable(false)
     }
 }

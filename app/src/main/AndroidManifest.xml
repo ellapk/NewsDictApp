@@ -12,10 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light"
         android:usesCleartextTraffic="true">
-        <activity android:name=".VocaAddActivity"></activity>
-        <activity android:name=".VocaWriteActivity" />
-        <activity android:name=".VocaReadActivity" />
-        <activity android:name=".ChooseActivity" />
+        <activity
+            android:name=".VocaAddActivity"
+            android:theme="@style/Theme.Android_2" />
+        <activity
+            android:name=".VocaReadActivity"
+            android:parentActivityName=".ChooseActivity"
+            android:theme="@style/Theme.Android_2"/>
+        <activity
+            android:name=".ChooseActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
             android:name=".Dictionary"
             android:parentActivityName=".MainActivity"

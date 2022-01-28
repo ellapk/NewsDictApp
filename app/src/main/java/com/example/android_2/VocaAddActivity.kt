@@ -3,6 +3,7 @@ package com.example.android_2
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -22,6 +23,9 @@ class VocaAddActivity : AppCompatActivity() {
         edtVoca = findViewById<EditText>(R.id.edtVoca)
         edtMean = findViewById<EditText>(R.id.edtMean)
         btnAdd = findViewById<Button>(R.id.btnAdd)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         dbManager = DBManager(this, "vocaDB", null, 1)
 
@@ -47,4 +51,17 @@ class VocaAddActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+
 }

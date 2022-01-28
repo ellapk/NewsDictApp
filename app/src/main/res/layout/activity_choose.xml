@@ -11,10 +11,10 @@
         android:id="@+id/goNews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="336dp"
+        android:layout_marginTop="376dp"
         android:background="@drawable/select_article"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,17 +29,17 @@
         app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goNews"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.252" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="169dp"
         android:layout_height="68dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginTop="388dp"
         android:text="DicSwuNary만의 차별화된\nIT/공학 뉴스를 만나볼 수 있습니다."
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.987"
+        app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,8 +47,8 @@
         android:id="@+id/textView3"
         android:layout_width="171dp"
         android:layout_height="115dp"
-        android:layout_marginTop="488dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="528dp"
+        android:layout_marginEnd="16dp"
         android:text="DicSwuNary에서 기사를 보며 몰랐던 단어들을\n한눈에 볼 수 있는\n나만의 단어장입니다."
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
