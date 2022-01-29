@@ -39,13 +39,13 @@ class VocaReadActivity : AppCompatActivity() {
             var tvVoca = TextView(this)
             tvVoca.text = str_voca
             tvVoca.textSize=30F
-            tvVoca.setBackgroundColor(Color.BLUE)
+            tvVoca.setBackgroundColor(Color.rgb(76,170,244))
             tvVoca.setTextColor(Color.WHITE)
             layout_item.addView(tvVoca)
 
             var tvMean = TextView(this)
             tvMean.text = str_mean
-            tvMean.textSize=18F
+            tvMean.textSize=23F
             tvMean.setBackgroundColor(Color.WHITE)
             tvMean.setTextColor(Color.BLACK)
             layout_item.addView(tvMean)
