@@ -14,8 +14,9 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="41dp"
             android:background="#65A5F6"
+            android:fontFamily="@font/nanum_square_round_l"
             android:gravity="center"
             android:text="단어"
             android:textColor="@color/white"
@@ -26,15 +27,17 @@
         <EditText
             android:id="@+id/edtVoca"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
             android:background="#e8f5ff"
+            android:fontFamily="@font/nanum_square_round_l"
             android:lines="5"
             android:textColor="#000000" />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="41dp"
             android:background="#65A5F6"
+            android:fontFamily="@font/nanum_square_round_l"
             android:gravity="center"
             android:text="뜻"
             android:textColor="@color/white"
@@ -46,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#e8f5ff"
+            android:fontFamily="@font/nanum_square_round_l"
             android:lines="15"
             android:textColor="#000000" />
 
@@ -57,16 +61,16 @@
         android:layout_margin="0dp"
         android:gravity="right">
 
-        <Button
+        <android.widget.Button
             android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:backgroundTint="#65A5F6"
+            android:background="#65A5F6"
             android:text="단어 추가"
             android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
