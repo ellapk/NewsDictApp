@@ -92,10 +92,10 @@ class VocaReadActivity : AppCompatActivity() {
             minLines = 4
 
             // 최대 라인을 설정
-            maxLines = 4
+            //maxLines = 4
 
             // 최대 라인 값을 벗어난 텍스트의 경우 마지막에 ... 을 표시
-            ellipsize = TextUtils.TruncateAt.END
+            //ellipsize = TextUtils.TruncateAt.END
         }
 
         layout.addView(
